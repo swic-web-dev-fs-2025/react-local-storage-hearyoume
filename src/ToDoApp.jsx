@@ -12,8 +12,8 @@ export default function ToDoApp() {
     e.preventDefault();
     const trimmed = (text || "").trim();
     if (!trimmed) return;
-    const item = { id: Date.now(), text: trimmed };
-    setTodos((prev) => [...prev, item]);
+    const newToDo = { id: Date.now(), text: trimmed };
+    setTodos((prev) => [...prev, newToDo]);
     setText("");
   };
 
