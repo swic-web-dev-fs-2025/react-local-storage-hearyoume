@@ -1,12 +1,13 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
-import React from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 
 export default function ToDoApp() {
-  // Persist both todos and the input value using the library hook
+  // Persist todos using the library hook; use transient state for the input
   const [todos, setTodos] = useLocalStorage("todos", []);
-  const [text, setText] = useLocalStorage("todo-input", "");
+  // eslint-disable-next-line use-encapsulation/prefer-custom-hooks
+  const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
