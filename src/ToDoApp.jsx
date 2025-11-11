@@ -1,7 +1,7 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
 import React, { useState } from "react";
 
-import "./App.css";
+import "./app.css";
 
 export default function ToDoApp() {
   // Persist todos using the library hook; use transient state for the input
@@ -32,12 +32,9 @@ export default function ToDoApp() {
       </form>
       <ul>
         {todos.map((todo) => (
-  <li key={todo.id}>
-    {todo.text}
-  </li>
-))}
+          <li key={todo.id}>{todo.text}</li>
+        ))}
       </ul>
     </div>
   );
 }
-
